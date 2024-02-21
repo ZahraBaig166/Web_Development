@@ -1,0 +1,41 @@
+#back{
+    margin-top:0 ;
+    padding-top: 0;
+    width: 60%;
+    height: 1000px;
+    background-color: rgb(129, 169, 204);
+}
+#back-top{
+    background-image: url(/back.jpg);
+    color: rgb(10, 47, 80);
+    height: 20%;
+    border-radius: 1% 1% 50% 70%;
+    box-shadow: 0px 15px 20px rgb(255, 255, 255);
+   padding: 10px 20px 20px 30px;
+}
+#backbottom{
+    height: 80%;
+}
+#outer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#name{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 60%;
+}
+#profile{
+    width: 20%;
+    display: inline-block;
+    border-radius: 90%;
+    border-color: rgb(50, 49, 49);
+    border-width: 2px;
+}
+#profile img{
+    border-radius: 100%;
+    border-style: none;
+    width: 100%;
+}
