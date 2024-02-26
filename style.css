@@ -1,41 +1,215 @@
-#back{
-    margin-top:0 ;
-    padding-top: 0;
-    width: 60%;
-    height: 1000px;
-    background-color: rgb(129, 169, 204);
-}
-#back-top{
-    background-image: url(/back.jpg);
-    color: rgb(10, 47, 80);
-    height: 20%;
-    border-radius: 1% 1% 50% 70%;
-    box-shadow: 0px 15px 20px rgb(255, 255, 255);
-   padding: 10px 20px 20px 30px;
-}
-#backbottom{
-    height: 80%;
-}
 #outer{
+    height: 1500;
     display: flex;
     justify-content: center;
     align-content: center;
-}
-#name{
+    background-color: rgb(113, 111, 111);
     margin: 0;
     padding: 0;
-    display: inline-block;
-    width: 60%;
 }
-#profile{
-    width: 20%;
-    display: inline-block;
-    border-radius: 90%;
-    border-color: rgb(50, 49, 49);
-    border-width: 2px;
+body{
+margin: 0;
+padding:0;
+background-color: rgba(170, 224, 231, 0.441) ;
 }
-#profile img{
+
+h1{
+    font-family: "Anta", sans-serif;
+    font-weight: 500px;
+    font-style: normal;
+    color: white;
+}
+.p-header{
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    color:white;
+    height: 0px;
+}
+#back{
+    margin: 20px;
+    padding: 0;
+    width: 65%;
+    height: 1150px;
+    box-shadow: 5px 7px 15px 5px  #2e2d2d;
+    background: linear-gradient( 60deg, rgb(205 196 230) 0%, rgb(206 234 236) 100% );
+}
+#back-header{
+    margin:-17px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
+    position: relative;
+    text-align: left;
+    background: linear-gradient(
+      60deg,
+      rgba(84, 58, 183, 1) 0%,
+      rgba(0, 172, 193, 1) 100%
+    );
+    /* color: white; */
+  }
+#intro{
+  height: 30%;
+  width: 100%;
+  margin: 0;
+  padding: 0px 0px 0px 100px;
+}
+.name{
+    display: inline-block;
+    width: 60%;    
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+hr {
+  border: none;
+  border-top: 3px solid #ffffff;
+  color: #ffffff;
+  height: 0px;
+  width: 267px;
+  margin-inline-start: 0px;
+}
+
+.profile{
+   position: absolute;
+   top:200pxpx;
+   left:600pxpx;
+    display: inline-block;
+    background-image: url(images/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 100%;
-    border-style: none;
+    height: 150px;
+    width: 150px;
+}
+
+.flex {
+    /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.waves {
+    position: relative;
     width: 100%;
+    height: 15vh;
+    margin-bottom: -3.6px;
+    /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+  }  
+
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 15s;
+  }
+  
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+  
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }  
+#backbottom{
+    height: 80%;
+}
+.highlight{
+  color: rgb(0, 138, 193);
+  padding: 5px 9px 9px 9px;
+  /* border-radius: 0% 30%; */
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+    display: inline-block;
+    margin: 0px;
+    font-size: large;
+    font-weight: bold;
+    text-underline-offset: 4px;
+    text-decoration: underline 3px solid rgb(0, 138, 193);
+    border-bottom: 3px solid rgb(0, 138, 193);
+    padding: 0px 0px 0px 0px;
+}
+#aboutme{
+  height: 200px;
+  margin: 20px 20px 20px 30px;
+  width: 60%;
+  padding: 5px;
+  display: inline-block
+}
+#contact{
+  height: 210px;
+  margin: 20px 14px 20px 20px;
+  width: 16%;
+  display: inline-block;
+  position: absolute;
+  right: 250px;
+}
+
+#font{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+li{
+  font-family: "Merriweather", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: smaller;
+  
+}
+li>p{
+  font-family: "Merriweather", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: smaller;
+}
+
+#education{
+  height: 300px;
+  display: inline-block;
+  width: 43%;
+  margin:20px 20px 20px 30px;
+}
+#certification{
+  height: 300px;
+  display: inline-block;
+  width: 27%;
+  margin: 20px;
+  position: absolute;
+  right: 245px;
+}
+#myskils{
+  height: 200px;
+  margin:20px 40px 20px 30px;
+}
+#aboutme,#myskils,#certification,#education,#contact{
+  border-radius: 0% 30%;
+  background-color: rgba(107, 190, 126, 0);
+  box-shadow: 9px 4px 4px #989797;
 }
