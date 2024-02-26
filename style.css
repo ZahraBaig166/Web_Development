@@ -212,4 +212,39 @@ li>p{
   border-radius: 0% 30%;
   background-color: rgba(107, 190, 126, 0);
   box-shadow: 9px 4px 4px #989797;
+  transition: 1s;
+}
+
+
+#aboutme:hover,
+#education:hover {
+  transform: scale(1.1);
+  background-color: rgb(58, 141, 173);
+  color: white;
+}
+
+#aboutme:hover .highlight,
+#education:hover .highlight {
+  color: white;
+  text-decoration: underline 3px solid  rgb(58, 141, 173);
+}
+.CONTACT-BOX{
+  padding-top: 20px
+}
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(30, 143, 255, 0);
+    height: 25px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+}
+.flex-container > img {
+  text-align: left;
+  line-height: 15px;
+}
+.flex-container > p{
+  PADDING-LEFT: 5PX;
+  font-size: 15px;
+  text-align: left;
 }
