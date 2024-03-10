@@ -77,12 +77,18 @@ hr {
    top:200pxpx;
    left:600pxpx;
     display: inline-block;
-    background-image: url(images/profile.jpg);
+    background-image: url(images/profile.jpeg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     border-radius: 100%;
     height: 150px;
     width: 150px;
+    transition: 1s;
+}
+
+.profile:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 10px white;
 }
 
 .flex {
@@ -214,8 +220,8 @@ li>p{
   box-shadow: 9px 4px 4px #989797;
   transition: 1s;
 }
-
-
+#certification:hover ,
+#contact:hover ,
 #aboutme:hover,
 #education:hover {
   transform: scale(1.1);
@@ -224,6 +230,8 @@ li>p{
 }
 
 #aboutme:hover .highlight,
+#certification:hover .highlight,
+#contact:hover .highlight,
 #education:hover .highlight {
   color: white;
   text-decoration: underline 3px solid  rgb(58, 141, 173);
@@ -235,9 +243,11 @@ li>p{
     display: flex;
     flex-wrap: nowrap;
     background-color: rgba(30, 143, 255, 0);
-    height: 25px;
+    height: 20px;
     padding-bottom: 14px;
     padding-left: 15px;
+    /* align-items: baseline; */
+
 }
 .flex-container > img {
   text-align: left;
@@ -248,3 +258,31 @@ li>p{
   font-size: 15px;
   text-align: left;
 }
+.skill-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.oneskill {
+  width: 25%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.oneskill img {
+  max-width: 40px;
+  max-height: 40px;
+  margin-bottom: 0px;
+  background-color: rgba(127, 255, 212, 0);
+}
+.skill-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+

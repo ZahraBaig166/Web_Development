@@ -1,0 +1,75 @@
+.logo { 
+  max-height: 60px
+}
+
+.btn-outline-primary {
+  padding: 0px;
+  height: 45px;
+  width: 45px;
+  border-width: 0px;
+}
+.categories{
+  height: 20vh;
+}
+
+.carouselExampleInterval {
+  height: 200px;
+}
+.carousel-item img {
+  min-width: 100vw; 
+  min-height: 100vh;
+  /* width: auto;
+  height: auto; */
+}
+.carousel{
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+.navbar{
+  position: relative;
+  top: 0px;
+  z-index: 2;
+}
+
+.icon {
+  max-height: 34px; /* Adjust the maximum height of the icons */
+  margin: 5px;
+  padding: 0px;
+  align-items: center;
+}
+
+.nav-buttons {
+  margin-right: unset;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff; /* Change the color according to your design */
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff; /* Change the color according to your design */
+  transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-outline-primary {
+  border-radius: 100px;
+}
+ 
+/* second style sheet  */
+
