@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent " class="mynavbar">
+  <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent mynavbar">
     <div class="container-fluid">
       <!-- Logo Image -->
       <a class="navbar-brand" href="#"><img src="/Furniture website/images/logo.png" alt="Logo" class="logo"></a>
@@ -34,7 +33,7 @@
             <a class="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0" class="nav-buttons">
+        <ul class="navbar-nav mb-2 mb-lg-0 nav-buttons">
           <!-- Search Form -->
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,26 +52,40 @@
     </div>
   </nav>
 
-  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="2000">
-        <img src="/Furniture website/images/backimg.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/Furniture website/images/backimg2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/Furniture website/images/backimg3.jpg" class="d-block w-100" alt="...">
+  <div class="background-image">
+    <div class="slogan-container">
+      <p class="slogan">Crafting Furniture, Creating Comfort</p>
+      <button class="btn btn-primary shop-now-btn">Shop Now</button>
+    </div>
+    <div class="container1">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="imgwrapper">
+              <img src="/Furniture website/images/A1.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="imgwrapper">
+              <img src="/Furniture website/images/A2.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="imgwrapper">
+              <img src="/Furniture website/images/A3.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   

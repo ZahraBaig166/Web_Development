@@ -1,5 +1,5 @@
 .logo { 
-  max-height: 60px
+  max-height: 60px;
 }
 
 .btn-outline-primary {
@@ -8,24 +8,13 @@
   width: 45px;
   border-width: 0px;
 }
-.categories{
-  height: 20vh;
+
+body{
+  background-color: rgb(131, 176, 212);
+  margin: 0;
+  padding: 0;
 }
 
-.carouselExampleInterval {
-  height: 200px;
-}
-.carousel-item img {
-  min-width: 100vw; 
-  min-height: 100vh;
-  /* width: auto;
-  height: auto; */
-}
-.carousel{
-  position: absolute;
-  top: 0px;
-  z-index: 1;
-}
 .navbar{
   position: relative;
   top: 0px;
@@ -70,6 +59,34 @@
 .btn-outline-primary {
   border-radius: 100px;
 }
- 
-/* second style sheet  */
 
+.carousel {
+  width: 100%;
+}
+
+.background-image {
+  background-image: url('/Furniture website/images/backwall.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.slogan-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.slogan {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.shop-now-btn {
+  color: #fff;
+}
