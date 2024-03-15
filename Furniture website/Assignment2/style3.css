@@ -37,9 +37,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-.outerrow{
-    PADDING: 8% 0% 8% 9%;
-}
+
 .contact-bg h3{
     font-size: 1.3rem;
     font-weight: 400;
@@ -53,23 +51,23 @@ body{
 .line div{
     margin: 0 0.2rem;
 }
-.line div:nth-child(1),
-.line div:nth-child(3){
+.line1,.line3{
     height: 3px;
     width: 70px;
     background: #729364;
     border-radius: 5px;
 }
-.line{
-    display: flex;
-    align-items: center;
-}
-.line div:nth-child(2){
+.line2{
     width: 10px;
     height: 10px;
     background: #729364;
     border-radius: 50%;
 }
+.line{
+    display: flex;
+    align-items: center;
+}
+
 .text{
     font-weight: 300;
     opacity: 0.9;
@@ -77,15 +75,9 @@ body{
 .contact-bg .text{
     margin: 1.6rem 0;
 }
-.contact-body{
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.contact-info{
-    margin: 2rem 0;
+
+.contact-info {
     text-align: center;
-    padding: 2rem 0;
 }
 .contact-info span{
     display: block;
@@ -99,17 +91,11 @@ body{
     padding-bottom: 0.9rem;
     color: #729364;
 }
-.contact-info div span:nth-child(2){
-    font-weight: 500;
-    font-size: 1.1rem;
-}
+
 .contact-info .text{
     padding-top: 0.4rem;
 }
-.contact-form{
-    padding: 2rem 0;
-    border-top: 1px solid #c7c7c7;
-}
+
 .contact-form form{
     padding-bottom: 1rem;
 }

@@ -1,0 +1,32 @@
+/* Set height of first column to 60vh */
+.first {
+    height: 60vh;
+}
+
+/* Set height of all other columns to 30vh */
+.col-12 {
+    height: 30vh;
+}
+
+/* Fit images inside the columns */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire column */
+}
+
+/* Center the content vertically */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add padding for better visibility */
+.top {
+    padding: 10px;
+}
+
+.div {
+    border: 1px solid black; /* For visualization, you can remove this in production */
+}
