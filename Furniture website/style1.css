@@ -11,8 +11,8 @@
 
 body{
   /* background-color: rgb(131, 176, 212); */
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   overflow-x: hidden;
 }
 
@@ -41,7 +41,7 @@ body{
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007bff; /* Change the color according to your design */
+  color: #939e8e; /* Change the color according to your design */
 }
 
 .navbar-nav .nav-link::after {
@@ -51,7 +51,7 @@ body{
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff; /* Change the color according to your design */
+  background-color: #939e8e; /* Change the color according to your design */
   transition: width 0.3s;
 }
 
@@ -68,7 +68,7 @@ body{
 }
 
 .background-image {
-  background-image: url('./images/backwall.svg');
+  background-image: url('./images/backwall.png');
   background-size: cover;
   background-position: bottom;
   height: 100vh;
@@ -121,7 +121,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background:#E2C799;
+    background:#939e8e;
     flex-flow: wrap;
   }
   
@@ -139,7 +139,7 @@ body{
   .card {
     width: 225px;
     height: 290px;
-    padding: 2rem 3rem;
+    padding: 2rem 2rem;
     background: #fff;
     position: relative;
     display: flex;
@@ -197,6 +197,7 @@ body{
   }
   
   .card .info {
+    /* text-align: center; */
     position: relative;
     z-index: 3;
     color: #fff;
@@ -211,7 +212,9 @@ body{
   }
   
   .card .info h1 {
+    text-align: center;
     margin: 0;
+    font-size: 2rem;
   }
   
   .card .info p {
@@ -233,7 +236,7 @@ body{
   }
   
   .contact-btn {
-    background-color: #B99470;; /* Green background */
+    background-color:#939e8e;; /* Green background */
     border: none;
     color: white; /* White text */
     padding: 15px 32px; /* Padding */
@@ -247,6 +250,98 @@ body{
   }
   
   .contact-btn:hover {
-    background-color: #C38154; 
+    background-color:#939e8e; 
   }
   
+
+  footer{
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: white;
+  }
+  footer{
+      background: #343434;
+      padding-top: 50px;
+  }
+  .container{
+      width: 1140px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+  }
+  .footer-content{
+      width: 33.3%;
+  }
+  h3{
+      font-size: 28px;
+      margin-bottom: 15px;
+      text-align: center;
+  }
+  .footer-content p{
+      width:190px;
+      margin: auto;
+      padding: 7px;
+  }
+  .footer-content ul{
+      text-align: center;
+  }
+  .list{
+      padding: 0;
+  }
+  .list li{
+      width: auto;
+      text-align: center;
+      list-style-type:none;
+      padding: 7px;
+      position: relative;
+  }
+  .list li::before{
+      content: '';
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 100%;
+      width: 0;
+      height: 2px;
+      background: #939e8e;
+      transition-duration: .5s;
+  }
+  .list li:hover::before{
+      width: 70px;
+  }
+  .social-icons{
+      text-align: center;
+      padding: 0;
+  }
+  .social-icons li{
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+  }
+  .social-icons i{
+      color: white;
+      font-size: 25px;
+  }
+ .list a{
+      text-decoration: none;
+      color: #939e8e ;
+  }
+  .list a:hover{
+      color: #939e8e;
+  }
+  .social-icons i:hover{
+      color: #939e8e;
+  }
+  .bottom-bar{
+      background: #939e8e;
+      text-align: center;
+      padding: 10px 0;
+  }
+  .bottom-bar p{
+      color: #343434;
+      margin: 0;
+      font-size: 16px;
+      padding: 7px;
+  }
