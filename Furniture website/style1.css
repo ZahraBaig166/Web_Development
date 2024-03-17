@@ -10,14 +10,10 @@
 }
 
 body{
-  /* background-color: rgb(131, 176, 212); */
-  /* margin: 0;
-  padding: 0; */
   overflow-x: hidden;
 }
 
 .navbar{
-  /* background-color: rgb(131, 176, 212) !important; */
   position: absolute;
   width: 100vw;
   top: 0;
@@ -25,7 +21,7 @@ body{
 }
 
 .icon {
-  max-height: 34px; /* Adjust the maximum height of the icons */
+  max-height: 34px; 
   margin: 5px;
   padding: 0;
   align-items: center;
@@ -41,7 +37,7 @@ body{
 }
 
 .navbar-nav .nav-link:hover {
-  color: #939e8e; /* Change the color according to your design */
+  color: #939e8e; 
 }
 
 .navbar-nav .nav-link::after {
@@ -51,7 +47,7 @@ body{
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #939e8e; /* Change the color according to your design */
+  background-color: #939e8e; 
   transition: width 0.3s;
 }
 
@@ -81,6 +77,9 @@ body{
 }
 
 .slogan-container {
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   position: absolute;
   top: 35%;
   left: 50%;
@@ -88,6 +87,7 @@ body{
   text-align: center;
   z-index: 1;
 }
+
 
 .slogan {
   color: #fff;
@@ -106,6 +106,7 @@ body{
   justify-content: center;
 
 }
+
   .carousel-item img {
     height: 78vh;
     width: auto;
@@ -117,6 +118,7 @@ body{
     font-family: 'Lato', sans-serif;
   }
   .categories {
+    padding: 2% 0%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -124,7 +126,10 @@ body{
     background:#939e8e;
     flex-flow: wrap;
   }
-  
+  .image img{
+    height: 300px;
+  }
+
   .wrapper {
     display: flex;
     width: 85%;
@@ -345,3 +350,53 @@ body{
       font-size: 16px;
       padding: 7px;
   }
+
+
+
+  .contact-info {
+    text-align: center;
+}
+.contact-info span{
+    display: block;
+}
+.contact-info div{
+    margin: 0.8rem 0;
+    padding: 1rem;
+}
+.contact-info span .fas{
+    font-size: 2rem;
+    padding-bottom: 0.9rem;
+    color: #729364;
+}
+.contact-info span{
+  font-weight: bold;
+}
+
+.contact-info .text{
+  font-weight: 100;
+    padding-top: 0.4rem;
+}
+.why p{
+  text-align: center;
+  color: #343434;
+  font-size: x-large;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+   
+    .contact-info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .contact-info{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
