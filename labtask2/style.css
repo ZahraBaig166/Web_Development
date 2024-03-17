@@ -1,0 +1,52 @@
+.product-card {
+    max-width:30% ;
+    margin: 19px;
+    height: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: #f0f8ff; 
+}
+h2{
+    font-family: "Squada One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    color: white;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.pricep{
+    font-size: large;
+    font-weight: bolder;
+}
+h5{
+    text-align: center;
+    font-family: "Squada One", sans-serif;
+    font-style: normal;
+    font-size: xx-large;
+}
+.butttons {
+    text-align: center;
+}
+#productsList{
+    padding: 2%;
+}
+
+.topback {
+    margin: 0px;
+    padding: 2% 5%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),url('./apiback.png'); 
+    background-size: cover;
+    
+}
+
+.product-card .buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+label{
+    color: white;
+}
