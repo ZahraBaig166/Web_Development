@@ -1,5 +1,5 @@
 .logo { 
-  max-height: 70px;
+  max-height: 55px;
 }
 
 .btn-outline-primary {
@@ -55,14 +55,16 @@ body{
   width: 100%;
 }
 
-/* @media (max-width: 991.98px) {
-  .navbar-collapse.show .navbar {
-    background-color: #757575c8; 
-  }
+/* .navbar-toggler {
+  background-color: rgba(103, 103, 103, 0.564);
 } */
 
-.btn-outline-success {
+.nav-icon {
   border-width: 0px ;
+  padding: 0px;
+}
+nav-icon:hover{
+  background-color:#939e8e ;
 }
 
 .carousel {
