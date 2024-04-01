@@ -184,7 +184,7 @@ padding: 0px 10px ;
   }
   .outer-container {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap; 
 
 }
 
