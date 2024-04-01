@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Squada+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  margin: 10px;
+}
+.upper-bar{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 1rem;
+}
+.icons{
+    flex: 1 1 0%;
+display: flex;
+-webkit-box-pack: start;
+justify-content: start;
+padding: 0px 10px ;
+}
+.logo{
+    flex: 1 1 0%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 32px;
+}
+
+.buttons{
+    flex: 1 1 0%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: end;
+    gap: 20px;
+}
+.menu, .search{
+    border: none;
+    margin-right: 1em;
+}
+.upper-bar{
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.search-icon{
+  height: 30px;
+}
+.name{
+  font-family: "Bakbak One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+}
+.date{
+  color: gray;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.search-bar {
+  display: none;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.right-content {
+  position: relative;
+}
+
+.show-search .search-bar {
+  display: inline-block;
+}
+
+.nav-link {
+    color: black !important; 
+
+    position: relative; 
+}
+.top{
+  background-color: black;
+  height: 25px;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+.line{
+  color:white;
+}
+.topwrap{
+  height: 25px;
+  background-color: black;
+  
+}
+
+.nav-link.active::after {
+    content: ''; 
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: black; 
+}
+
+.time{
+    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: -0.12px;
+    color: rgb(84, 86, 88);
+    display: inline-block;
+
+}
+.seperator{
+    background-color: rgb(84, 86, 88);
+    margin: auto 2px;
+    height: 16px;
+    width: 1px;
+    display: inline-block;
+
+}
+.news{
+    width: 32px;
+    display: inline-block;
+
+}
+.info{
+    align-items: baseline;
+}
+.country{
+    color: rgb(84, 86, 88);
+    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: -0.12px;
+    pointer-events: none;
+    display: inline-block;
+}
+
+.card {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 300px; 
+    margin: auto;
+    margin-bottom: 2em;
+  }
+  .card-header {
+    background-color: #6200EA; 
+    color: white; 
+    padding: 10px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 10px 10px 0 0; 
+    font-family: Arial, sans-serif;
+  }
+  .card-content {
+    font-family: Arial, sans-serif;
+    color: #333; 
+  }
+  .outer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+
+}
+
+
+.left-div .col {
+    padding: 0;
+}
+
+.news-card {
+    width: 100%; 
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1em;
+  }
+
+  .news-card img {
+    width: 100%;
+  }
+  .news-card-title {
+    font-weight: bold; 
+}
+  .news-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    border-bottom: 1px solid gray
+}
+
+.news-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.news-card-summary {
+    flex: 1; 
+    margin-right: 10px; 
+    font-size: xx-small;
+}
+
+.news-card img {
+    max-width: 100px; 
+    height: auto; 
+}
+  
+.left-div {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.left-news-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-news-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.left-news-card-content {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.left-news-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.left-news-card-summary {
+  margin-bottom: 5px;
+}
+
+.left-news-card-metadata {
+  color: #666;
+}
+
+.left-news-card-metadata span {
+  margin-right: 5px;
+}
+
+.gradient-line {
+  height: 2px; 
+  background: linear-gradient(to right, #4A90E2, #8A2BE2, #9B30FF); 
+  width: 100%;
+}
+
+  .main-content {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .main-content img {
+    width: 100%;
+    height: auto;
+  }
+  .headline {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .summary {
+    margin-top: 10px;
+  }
+  .summary a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .summary a:hover {
+    text-decoration: underline;
+  }
+
+ 
+
+.left-div {
+    flex: 1; /* Updated flex value */
+    width: 30%; /* Adjusted width */
+    padding: 20px;
+}
+
+.right-div {
+    flex: 1; /* Updated flex value */
+    width: 30%; /* Adjusted width */
+    padding: 20px;
+}
+
+.left-div .row {
+    flex: 2; /* Adjusted flex value */
+    width: 100%; /* Adjusted width */
+    padding: 20px;
+}
+.left-div .row .col-4{
+    width: 100% !important;
+}
+.middle-sec{
+    width: 40% !important;
+}
+
+@media (max-width: 1000px) {
+    .outer-container {
+        flex-wrap: wrap;
+    }
+
+    .middle-sec {
+        flex-basis: 100%;
+        order: 2; 
+        width: 60% !important;
+    }
+
+    .right-div {
+        flex-basis: 100%;
+        order: 3; 
+        margin-top: 20px; 
+    }
+    .left-div{
+        width: 40% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .outer-container {
+        flex-direction: column; 
+    }
+
+    .left-div {
+        order: 3;
+        width: 100%; 
+        margin-top: 20px; 
+    }
+    .middle-sec{
+        width: 100% !important;
+    }
+}
+@media (max-width: 1000px) {
+    .navigation {
+      display: none;
+    }
+  }
+  

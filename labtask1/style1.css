@@ -63,8 +63,9 @@ body{
   border-width: 0px ;
   padding: 0px;
 }
-nav-icon:hover{
+.btn-outline-success:hover{
   background-color:#939e8e ;
+  border-width: 0px ;
 }
 
 .carousel {
@@ -412,4 +413,56 @@ nav-icon:hover{
     .contact-info{
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+
+.new-arrivals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0px 35px 0px 75;
+}
+
+.new-arrivals .box {
+  flex: 0 1 calc(23% - 10px); /* Adjust the width as needed */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  height: 70vh;
+  align-content:flexend ;
+}
+
+.new-arrivals .box.text-box {
+  flex: 0 1 calc(25% - 10px); /* Adjust the width as needed */
+}
+
+.new-arrivals .box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.new-arrivals .box .view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #939e8e;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-arrivals .box .view-more-btn i {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .new-arrivals .box {
+      flex: 0 1 calc(47% - 10px); /* Adjust the width as needed for smaller screens */
+  }
+
+  .new-arrivals .box.text-box {
+      flex: 0 1 calc(94% - 10px); /* Adjust the width as needed for smaller screens */
+  }
 }
