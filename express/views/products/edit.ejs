@@ -1,0 +1,9 @@
+<h2>Edit Product</h2>
+
+<form action="/products/<%= product._id %>/edit" method="post">
+    Name: <input type="text" name="name" value="<%= product.name %>"/> <br>
+    Category: <input type="text" name="category" value="<%= product.category %>"> <br>
+    Price: <input type="text" name="price" value="<%= product.price %>"> <br>
+    Description: <input type="text" name="description" value="<%= product.description %>"> <br>
+    <input type="submit">
+</form>

@@ -1,0 +1,23 @@
+<h1>
+    <%= pageTitle %>
+</h1>
+<a href="/products/new">Add New Product</a>
+<br>
+Page: <%= page %> Records: <%= total %>
+<ul>
+    <% for( let index = 1; index <= totalPages; index++ ) { %>
+        <li style="display: inline;">
+            <a href="/products/<%= index %>"><%= index %></a>
+        </li>
+    <% } %>
+</ul>
+<% for( let index = 0; index < products.length; index++ ) { %>
+<div class="product">
+    <h3 class="product-name"><%= products[index].name %></h3>
+    <p>Category: <%= products[index].category %></p>
+    <p>Price: <%= products[index].price %></p>
+    <p>Description: <%= products[index].description %></p>
+    <a href="/products/<%= products[index]._id %>/edit">Edit</a>
+    <a href="/products/<%= products[index]._id %>/delete">Delete</a>
+</div>
+<% } %>

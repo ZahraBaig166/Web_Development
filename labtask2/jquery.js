@@ -10,6 +10,7 @@ function displayProducts() {
         $.each(data, function (index, product) {
           var card = $("<div class='col-md-4 product-card'></div>");
           card.append("<h5>" + product.Productname + "</h5>");
+          $("card").parent
           card.append("<p>Colour: " + product.colour + "</p>");
           card.append("<p>Material: " + product.material + "</p>");
           card.append("<p class=pricep>Price: $" + product.price + "</p>");
