@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="style4.css"> 
 
 <!-- new.ejs -->
-<form action="/new" method="post">
+<form action="/products/new" method="post">
     Name: <input type="text" name="name" required><br>
     Category: <input type="text" name="category" required><br>
     Price: <input type="number" name="price" required><br>
@@ -9,4 +9,18 @@
     <input type="submit" value="Create Product">
 </form>
 
+
+<!-- 
+<form id="uploadForm" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" rows="4" required></textarea>
+    <br>
+    <label for="image">Image:</label>
+    <input type="file" name="image" id="imageInput" accept="image/*" required>
+    <br>
+    <button type="submit">Upload</button>
+  </form> -->
 

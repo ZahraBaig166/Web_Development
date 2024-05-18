@@ -1,8 +1,7 @@
-
 <link rel="stylesheet" href="style4.css"> 
 <h2>Edit Product</h2>
 
-<form action="/products/<%= product._id %>/edit" method="post">
+<form action="/<%= product._id %>/edit" method="post">
     Name: <input type="text" name="name" value="<%= product.name %>"/> <br>
     Category: <input type="text" name="category" value="<%= product.category %>"> <br>
     Price: <input type="text" name="price" value="<%= product.price %>"> <br>
