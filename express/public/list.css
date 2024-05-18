@@ -1,0 +1,62 @@
+/* Styles for the overall content container */
+#page-content {
+    margin-top: 80px; /* Space from the navbar, adjust based on your navbar's height */
+    padding: 20px; /* Padding around the content for better spacing */
+    background: #f0f0f0; /* Light background color for the content area */
+}
+
+/* Styling the header */
+#page-content h1 {
+    color: #333;
+    font-size: 24px; /* Large font size for visibility */
+    text-align: center; /* Centering the header */
+    padding-bottom: 20px; /* Space below the header */
+    border-bottom: 2px solid #ddd; /* Subtle line under the header */
+    margin-bottom: 20px; /* Space between header and product list */
+}
+
+/* Styling individual product entries */
+.product {
+    background: #fff; /* White background for each product */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for 3D effect */
+    margin-bottom: 20px; /* Space between products */
+    padding: 15px; /* Padding inside each product box */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+}
+
+.product h3 {
+    color: #007BFF; /* Theme color for product names */
+    margin-bottom: 5px; /* Small margin below the product name */
+}
+
+.product p {
+    color: #666; /* Lighter text color for descriptions */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Links styling */
+.product a {
+    color: #007BFF; /* Theme color for links */
+    text-decoration: none; /* No underline */
+    margin-right: 10px; /* Space between links */
+}
+
+.product a:hover {
+    text-decoration: underline; /* Underline on hover for better interaction */
+}
+
+/* Styling for the page navigation */
+.pagination {
+    text-align: center; /* Centering the pagination */
+    padding: 20px 0; /* Padding above and below the pagination */
+}
+
+.pagination a {
+    color: #007BFF; /* Theme color for pagination links */
+    margin: 0 5px; /* Space around pagination numbers */
+    text-decoration: none; /* No underline */
+}
+
+.pagination a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
