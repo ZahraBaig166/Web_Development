@@ -1,37 +1,70 @@
 const express = require("express");
-const req = require("express/lib/request");
-const router = express.Router();
+const multer = require("multer");
 const Product = require("../models/Products");
+const router = express.Router();
 
-router.get("/new", async (req, res) => {
-  res.render("new",{pageContent:"new"});
-});
 
-router.post("/products/new", async (req, res) => {
-  let record = new Product(req.body);
-  await record.save();
-  return res.redirect("/list");
-});
+const upload = multer();
 
-router.get("/:id/delete", async (req, res) => {
-  await Product.findByIdAndDelete(req.params.id);
-  return res.redirect("/list");  
+router.get("/products/new", async (req, res) => {
+  console.log("Accessing the new product form");
+  res.render("new", {pageContent: "new"});
 });
 
 
-router.get("/:id/edit", async (req, res) => {
-  let product = await Product.findById(req.params.id);
-  res.render("edit", { pageContent:"edit",product });  
+router.post("/products/new", upload.single('image'), async (req, res) => {
+  try {
+    const { name, category, type, price, description } = req.body;
+    const image = req.file ? req.file.buffer : null;
+    const newProduct = new Product({ name, category, type, price, description, image });
+    await newProduct.save();
+    return res.redirect("/list");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error creating product.');
+  }
 });
 
-router.post("/:id/edit", async (req, res) => {
-  let product = await Product.findById(req.params.id);
-  product.name = req.body.name;
-  product.category = req.body.category;
-  product.price = req.body.price;
-  product.description = req.body.description;
-  await product.save();
-  return res.redirect("/list");  
+router.get("/products/:id/delete", async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    return res.redirect("/list");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error deleting product.');
+  }
+});
+
+
+router.get("/products/:id/edit", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.render("layout", { 
+      pageContent: "edit", // This points to the 'edit.ejs' file under the 'views' directory.
+      product: product // Make sure to pass the product to the 'edit.ejs' file.
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error loading product.');
+  }
+});
+
+
+router.post("/products/:id/edit", upload.single('image'), async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, category, type, price, description } = req.body;
+    const image = req.file ? req.file.buffer : undefined;
+    const updateData = { name, category, type, price, description };
+    if (image !== undefined) {
+      updateData.image = image;
+    }
+    await Product.findByIdAndUpdate(id, updateData);
+    return res.redirect("/list");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error updating product.');
+  }
 });
 
 module.exports = router;

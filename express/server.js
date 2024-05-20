@@ -1,37 +1,46 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Products = require("./models/Products")
+const Product = require("./models/Products"); 
+const ProductApiRouter = require("./routes/products");
 
 let server = express();
 server.use(express.json());
-server.use(express.urlencoded());
+server.use(express.urlencoded({ extended: true }));
 
 server.set("view engine", "ejs");
 server.use(express.static("public"));
 var expressLayouts = require("express-ejs-layouts");
 server.use(expressLayouts);
 
-let ProductApiRouter = require("./routes/products");
-server.use("/", ProductApiRouter); 
+server.use("/", ProductApiRouter);
 
 server.get("/", (req, res) => {
   res.render("layout", { pageContent: "homepage" });
 });
+
 server.get("/contact", (req, res) => {
   res.render("layout", { pageContent: "contact" });
 });
+
 server.get("/homepage", (req, res) => {
   res.render("layout", { pageContent: "homepage" });
 });
 
-server.get("/list", async (req, res) => {
-  const products = await Products.find(); // Fetch all products from the database
-  const total = products.length; // Total number of products
-  const page = 1; // Assuming you're not paginating or this is page 1
-  const pageSize = total; // Assuming you're not paginating
-  const totalPages = 1; // Assuming there's only one page
+// server.get("/login", (req, res) => {
+//   res.render("layout", { pageContent: "login" });
+// });
 
-  res.render("layout", {
+
+
+server.get("/list", async (req, res) => {
+  try {
+    const products = await Product.find();
+    const total = products.length;
+    const page = 1;
+    const pageSize = total;
+    const totalPages = 1;
+
+    res.render("layout", {
       pageContent: "list",
       pageTitle: "List All Products",
       products: products,
@@ -39,14 +48,17 @@ server.get("/list", async (req, res) => {
       page: page,
       pageSize: pageSize,
       totalPages: totalPages
-  });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error fetching products.");
+  }
 });
 
-mongoose.connect("mongodb://localhost:27017/Furniture_items").then((data) => {
+mongoose.connect("mongodb://localhost:27017/Furniture_items").then(() => {
   console.log("DB Connected");
 });
+
 server.listen(4000, () => {
   console.log("Server started at localhost:4000");
-});   
-
-
+});

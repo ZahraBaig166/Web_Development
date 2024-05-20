@@ -1,24 +1,37 @@
-<link rel="stylesheet" href="list.css"> 
-<h1>
-    <%= pageTitle %>
-</h1>
-<button class="btn-custom" style="margin-left:25px;" onclick="location.href='new'">New Menu</button>
+<link rel="stylesheet" href="list.css">
+
+<h1><%= pageTitle %></h1>
+
+<div class="product-grid-container">
+    <% products.forEach(function(product) { %>
+    <div class="product-grid">
+        <div class="product-image">
+            <a href="#" class="image">
+                <% if (product.image) { %>
+                    <img src="data:image/png;base64,<%= product.image.toString('base64') %>">
+                <% } else { %>
+                    <img src="path/to/default/image.jpg"> 
+                <% } %>
+            </a>
+            <ul class="product-links">
+                <li><a href="/products/<%= product._id %>/edit"><i class="fa fa-edit"></i></a></li>
+                <li><a href="/products/<%= product._id %>/delete"><i class="fa fa-trash"></i></a></li>
+            </ul>
+        </div>
+        <div class="product-content">
+            <h3 class="title"><a href="#"> <%= product.name %> </a></h3>
+            <div class="price">$<%= product.price %></div>
+            <p class="description"><%= product.description %></p>
+            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
 <br>
-Page: <%= page %> Records: <%= total %>
-<ul>
-    <% for( let index = 1; index <= totalPages; index++ ) { %>
-        <li style="display: inline;">
-            <a href="/<%= index %>"><%= index %></a>
-        </li>
+<button class="btn-custom" style="margin-left:25px;" onclick="location.href='/products/new'">New Product</button>
+<ul class="pagination">
+    <% for(let index = 1; index <= totalPages; index++) { %>
+    <li style="display: inline;"><a href="/page/<%= index %>"><%= index %></a></li>
     <% } %>
 </ul>
-<% for( let index = 0; index < products.length; index++ ) { %>
-<div class="product">
-    <h3 class="product-name"><%= products[index].name %></h3>
-    <p>Category: <%= products[index].category %></p>
-    <p>Price: <%= products[index].price %></p>
-    <p>Description: <%= products[index].description %></p>
-    <a href="/<%= products[index]._id %>/edit">Edit</a>
-    <a href="/<%= products[index]._id %>/delete">Delete</a>
-</div>
-<% } %>

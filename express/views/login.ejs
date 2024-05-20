@@ -1,0 +1,65 @@
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .Scontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .Slogin-card {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .Slogin-info {
+            background: url('/express/public/images/authimg.jpg') no-repeat center center;
+            background-size: cover;
+            width: 50%;
+            padding: 20px;
+            color: white;
+        }
+        .Sform-section {
+            padding: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .Sform-control {
+            margin-bottom: 10px;
+        }
+        .Sbtn-custom {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+        }
+    </style>
+
+    <div class="Scontainer">
+        <div class="Slogin-card">
+            <div class="Slogin-info">
+                <h2>We haven’t met before right?</h2>
+                <p>Then you should try us!</p>
+                <p>From Vancouver to Auckland, Zomato is used by millions every day to decide where to eat in over 10,000 cities across 23 countries.</p>
+                <button class="Sbtn-custom" onclick="window.location.href='/signup'">SIGN UP</button>
+            </div>
+            <div class="Sform-section">
+                <h3>Welcome home, Sebastian!</h3>
+                <input type="text" class="Sform-control" placeholder="Username">
+                <input type="password" class="Sform-control" placeholder="Password">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="keepSignedIn">
+                    <label class="form-check-label" for="keepSignedIn">Keep me Signed in</label>
+                </div>
+                <button class="Rbtn-custom" onclick="window.location.href='/register'">REGISTER</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+

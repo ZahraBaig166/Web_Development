@@ -1,10 +1,10 @@
-// const mongoose = require("mongoose");
-// const productSchema = new mongoose.Schema({
-//   name:Number,
-//   email : String,
-//   password: String,
-//   price: Number,
-//   description: String,
-// });
-// const Product = mongoose.model("Product", productSchema);
-// module.exports = Product;
+const mongoose = require("mongoose");
+let userSchema = mongoose.Schema({
+  name: String,
+  email: String,
+  password: String,
+  pass_hint: String,
+  role: [String],
+});
+let user = mongoose.models.User || mongoose.model("User", userSchema);
+module.exports = user;

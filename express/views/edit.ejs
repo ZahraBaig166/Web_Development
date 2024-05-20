@@ -1,10 +1,35 @@
-<link rel="stylesheet" href="style4.css"> 
+<link rel="stylesheet" href="style3.css"> 
 <h2>Edit Product</h2>
-
-<form action="/<%= product._id %>/edit" method="post">
-    Name: <input type="text" name="name" value="<%= product.name %>"/> <br>
-    Category: <input type="text" name="category" value="<%= product.category %>"> <br>
-    Price: <input type="text" name="price" value="<%= product.price %>"> <br>
-    Description: <input type="text" name="description" value="<%= product.description %>"> <br>
-    <input type="submit">
+<form id="uploadForm" action="/products/<%= product._id %>/edit" method="post" enctype="multipart/form-data">
+    Name: <input type="text" name="name" value="<%= product.name %>" required><br>
+    Category: <input type="text" name="category" value="<%= product.category %>" required><br>
+    Type: <input type="text" name="type" value="<%= product.type %>" required><br>
+    Price: <input type="number" name="price" value="<%= product.price %>" required><br>
+    Description: <input type="text" name="description" value="<%= product.description %>" required><br>
+    Image: <input type="file" name="image" accept="image/*"><br>
+    <input type="submit" value="Update Product">
 </form>
+
+<script>
+document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch(`/products/${product._id}/edit`, {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok) {
+            alert('Product updated successfully!');
+            window.location.href = '/list'; 
+        } else {
+            alert('Error updating product.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error updating product.');
+    }
+});
+</script>

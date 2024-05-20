@@ -1,0 +1,59 @@
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .Rcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .Rregister-card {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .Rregister-info {
+            background: url('/express/public/images/authimg.jpg') no-repeat center center;
+            background-size: cover;
+            width: 50%;
+            padding: 20px;
+            color: white;
+        }
+        .Rform-section {
+            padding: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .Rform-control {
+            margin-bottom: 10px;
+        }
+        .Rbtn-custom {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+        }
+    </style>
+    <div class="Rcontainer">
+        <div class="Rregister-card">
+            <div class="Rregister-info">
+                <h2>New here? Let’s get you started!</h2>
+                <p>Join millions who trust us to find the best places to eat worldwide.</p>
+            </div>
+            <div class="Rform-section">
+                <h3>Create your account</h3>
+                <input type="text" class="Rform-control" placeholder="Username" required>
+                <input type="email" class="Rform-control" placeholder="Email" required>
+                <input type="password" class="Rform-control" placeholder="Password" required>
+                <input type="password" class="Rform-control" placeholder="Confirm Password" required>
+                <button class="Rbtn-custom" onclick="window.location.href='/login'">REGISTER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
