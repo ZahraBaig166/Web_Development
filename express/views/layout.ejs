@@ -39,21 +39,32 @@
               <img src="/images/cart.png" alt="Cart Icon" class="icon">
             </button>
             <button class="btn btn-outline-success nav-icon"  onclick="window.location.href='/login'" type="button">
-              <img src="/images/sign-in.png" alt="Sign In Icon" class="icon">
+              <% if (!user) { %>
+                <li class="nav-item">
+                  <a class="nav-link icon" href="/login">Login</a>
+                </li>
+              <% } else { %>
+
+                <li class="nav-item">
+                  <a class="nav-link icon" href="/logout">Logout</a>
+                </li>
+              <% } %>
             </button>
           </form>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- <% if (flash) { %>
-    <div class="alert alert-<%-flash.type%>">
-       <%= flash.message %>
-   </div>
-   <% } %> -->
+  <% if(flash){%>
+    <div class="alert alert-<%- flash.type %>">
+      <%= flash.message %>
+    </div>
+  <% } %>
+  
   <div id="page-content">
     <%- include(pageContent) %>
   </div>
+
 
   <footer>
     <div class="container">

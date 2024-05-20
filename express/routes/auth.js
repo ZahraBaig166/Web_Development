@@ -1,40 +1,49 @@
-// const express = require("express");
-// let router = express.Router();
-// let User = require("/../models/User");
+const express= require("express");
+const req = require("express/lib/request");
+let router= express.Router();
+let User = require("../models/user");
 
-// router.get("/register", (req, res) => {
-//   res.render("auth/register");
-// });
-// router.post("/register", async (req, res) => {
-//   let user = await User.findOne({ email: req.body.email });
-//   if (user) {
-//     res.flash("danger", "User Already Exist");
-//     return res.redirect("/register");
-//   }
-//   user = new User(req.body);
-//   await user.save();
-//   res.render("/login");
-// });
-// router.get("/logout", (req, res) => {
-//   req.session.user = null;
-//   res.flash("success", "Logged out Successfully");
-//   res.redirect("/login");
-// });
-// router.get("/login", (req, res) => {
-//   res.render("auth/login");
-// });
-// router.post("/login", async (req, res) => {
-//   let user = await User.findOne({ email: req.body.email });
-//   if (!user) {
-//     res.flash("danger", "USer with given email already exist");
-//     return res.redirect("/register");
-//   }
-//   if (user.password != req.body.password) {
-//     res.flash("danger", "Invalid Password");
-//     return res.redirect("/login");
-//   }
-//   req.session.user = user;
-//   res.flash("success", user.name + " Logged In");
-//   return res.redirect("/");
-// });
-// module.exports = router;
+router.get("/register",async (req,res)=>{
+    res.render("register",{pageContent:"register"})
+})
+
+router.post("/register", async function (req, res) {
+    let user = await User.findOne({
+      email: req.body.email,
+    });
+    if(user){
+        res.flash("danger", "User Already Exist");
+        return res.redirect("/register");
+    }
+    user = new User(req.body)
+    await user.save()
+    res.flash("success","Registered successfully!")
+    res.redirect("/login")
+
+  });
+
+  router.post("/login", async (req, res) => {
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) {
+        res.flash("danger", "User doesn't exist or incorrect credentials!");
+        return res.redirect("/login");
+    }
+    if (user.password != req.body.password) {
+        res.flash("danger", "Invalid Password");
+        return res.redirect("/login");
+    }
+    req.session.user = user;
+    res.flash("success", user.name + " Logged In");
+    return res.redirect("/");
+});
+
+    router.get("/login",(req,res)=>{
+        res.render("login",{pageContent:"login"})
+    })
+    router.get("/logout", (req, res) => {
+      req.session.user = null;
+      res.flash("success", "Logged out Successfully");
+      res.redirect("/login");
+    });
+    
+module.exports= router
