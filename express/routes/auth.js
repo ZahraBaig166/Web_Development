@@ -2,6 +2,7 @@ const express= require("express");
 const req = require("express/lib/request");
 let router= express.Router();
 let User = require("../models/user");
+const bcrypt = require('bcryptjs');
 
 router.get("/register",async (req,res)=>{
     res.render("register",{pageContent:"register"})
@@ -15,8 +16,10 @@ router.post("/register", async function (req, res) {
         res.flash("danger", "User Already Exist");
         return res.redirect("/register");
     }
-    user = new User(req.body)
-    await user.save()
+    user = new User(req.body);
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(req.body.password, salt);
+    await user.save();
     res.flash("success","Registered successfully!")
     res.redirect("/login")
 
@@ -28,7 +31,7 @@ router.post("/register", async function (req, res) {
         res.flash("danger", "User doesn't exist or incorrect credentials!");
         return res.redirect("/login");
     }
-    if (user.password != req.body.password) {
+    if (!await bcrypt.compare(req.body.password, user.password)) {
         res.flash("danger", "Invalid Password");
         return res.redirect("/login");
     }
