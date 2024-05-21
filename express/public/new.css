@@ -1,0 +1,47 @@
+.pageContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  
+    background: url('./images/login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8;  
+}
+    .Nproduct-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.Nlabel {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.Ninput,
+.Nselect {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Nsubmit {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Nsubmit:hover {
+    background-color: #45a049;
+}

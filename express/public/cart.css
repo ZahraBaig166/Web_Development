@@ -1,0 +1,5 @@
+.cartcontainer{
+    background: url('./images/construction.jpg') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+}

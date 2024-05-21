@@ -75,7 +75,7 @@ body {
   background-image: url('./images/backwall.png');
   background-size: cover;
   background-position: bottom;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   position: relative;
@@ -85,7 +85,7 @@ body {
 }
   .slogan-container {
     position: absolute;
-    top: 26%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -412,56 +412,45 @@ body {
           grid-template-columns: repeat(4, 1fr);
       }
   }
-  
-  
   .new-arrivals {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
-    padding: 0px 35px 0px 75;
+    padding: 0px 35px;
+    background-color: #fff; /* White background */
   }
   
   .new-arrivals .box {
-    flex: 0 1 calc(23% - 10px); /* Adjust the width as needed */
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    height: 70vh;
-    align-content:flexend ;
+    flex: 0 1 23%;
+    margin: 10px;
+    height: 40vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top for images */
+    align-items: center; /* Center content horizontally */
+    background-color: #fff; /* Keep background white */
   }
   
   .new-arrivals .box.text-box {
-    flex: 0 1 calc(25% - 10px); /* Adjust the width as needed */
+    order: 0;
+    flex: 0 1 15%;
+    justify-content: center;
   }
   
   .new-arrivals .box img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .new-arrivals .box .view-more-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #939e8e;
-    color: #fff;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .new-arrivals .box .view-more-btn i {
-    margin-left: 5px;
+    width: 100%; /* Use full width of the box */
+    height: 40vh; /* Images take up 40% of the viewport height */
+    object-fit: cover; /* Ensures images cover the designated area nicely */
   }
   
   @media (max-width: 768px) {
     .new-arrivals .box {
-        flex: 0 1 calc(47% - 10px); /* Adjust the width as needed for smaller screens */
+      flex: 0 1 calc(47% - 10px); /* Adjust the width as needed for smaller screens */
     }
   
     .new-arrivals .box.text-box {
-        flex: 0 1 calc(94% - 10px); /* Adjust the width as needed for smaller screens */
+      flex: 0 1 calc(94% - 10px); /* Full width on smaller screens */
     }
   }
   

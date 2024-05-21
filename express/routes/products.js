@@ -49,6 +49,22 @@ router.get("/products/:id/edit", async (req, res) => {
   }
 });
 
+router.get("/products/list", async (req, res) => {
+  try {
+    const products = await Product.find(); 
+    const currentPage = req.query.page || 1;
+    const totalPages = Math.ceil(products.length / 6); 
+
+    res.render("list", { 
+      products, 
+      currentPage: parseInt(currentPage), 
+      totalPages 
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error loading products.');
+  }
+});
 
 router.post("/products/:id/edit", upload.single('image'), async (req, res) => {
   try {
