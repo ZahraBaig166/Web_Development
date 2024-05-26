@@ -4,6 +4,7 @@ const { User } = require("../models/user");
 
 async function tokenvalidation(req, res, next) {
   let token = req.header("auth-token");
+  console.log('hello  '+token);
   if (!token) return res.status(400).send("Token Not Provided");
 
   try {

@@ -35,15 +35,23 @@ router.post("/login", async (req, res) => {
         res.flash("danger", "Invalid Password");
         return res.redirect("/login");
     }
-    req.session.user = user;
-    const token = jwt.sign({ _id: user._id, name: user.name }, config.get("myprivatekey"));
+    
+    req.session.user = {
+        _id: user._id,
+        name: user.name,
+        role: user.role  
+    };
+    console.log(req.session.user.role)
+    const token = jwt.sign({ _id: user._id, name: user.name, role: user.role }, config.get("myprivatekey"));
     console.log(token);
 
-    res.cookie('auth_token', token, { httpOnly: true, secure: false }); 
-
+    res.cookie('auth_token', token, { httpOnly: true, secure: process.env.NODE_ENV === "production" }); // Consider enforcing HTTPS in production for security
+    
+    // Use flash to indicate success
     res.flash("success", user.name + " Logged In");
     return res.redirect("/");
 });
+ 
 
 router.get("/login", (req, res) => {
     res.render("login", { pageContent: "login" });

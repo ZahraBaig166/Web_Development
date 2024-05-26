@@ -5,13 +5,8 @@ let userSchema = mongoose.Schema({
   email: String,
   password: String,
   hint: String,
-  role: { type: String, default: "user" } 
+  role: { type: String, default: "admin" } 
 });
-
-// userSchema.methods.bcryptpasswords = async function(){
-//   const salt = await bcrypt.genSalt(10);
-//   this.password = await bcrypt.hash(this.password, salt);
-// }
 
 let user = mongoose.models.User || mongoose.model("User", userSchema);
 module.exports = user;

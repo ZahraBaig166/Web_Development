@@ -33,7 +33,7 @@ const ProductApiRouter = require("./routes/products");
 const { Server } = require("tls");
 server.use("/", ProductApiRouter);
 
-server.get("/contact", (req, res) => {
+server.get("/contact",isAuthenticated,isAdmin, (req, res) => {
     res.render("layout", { pageContent: "contact" });
 });
 

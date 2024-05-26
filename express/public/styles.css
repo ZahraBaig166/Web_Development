@@ -8,6 +8,21 @@
   width: 45px;
   border-width: 0px;
 }
+@keyframes text-color-animation {
+  0% {
+      color: #000; /* Dark color */
+  }
+  50% {
+      color: #888; /* Mid color */
+  }
+  100% {
+      color: #fff; /* Light color */
+  }
+}
+
+.text-animation {
+  animation: text-color-animation 1s linear infinite alternate; /* Animation properties */
+}
 
 body {
   overflow-x: hidden;
@@ -17,12 +32,14 @@ body {
   margin-right: unset;
 }
 .navbar {
-  position: sticky;  
+  position: sticky; 
+  height: 55px; 
   top: 0;
   width: 100%;
   z-index: 2;
-  background-color: white; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: #768371;
+  border-bottom: 5rem white ;
+  box-shadow: 0 6px 6px rgba(244, 243, 243, 0.386); 
 }
 
 .navbar-nav .nav-link {
@@ -31,7 +48,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-  color: #939e8e;
+  color: white;
 }
 
 .navbar-nav .nav-link::after {
@@ -41,7 +58,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #939e8e;
+  background-color: white;
   transition: width 0.3s;
 }
 

@@ -33,40 +33,42 @@
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0 nav-buttons">
           <form class="d-flex" style="height: 45px">
-            <input class="form-control me-2" style="margin: 5px;" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success nav-icon" type="submit"><img src="/images/search.png" alt="Search Icon" class="icon"></button>
-            <button class="btn btn-outline-success nav-icon" type="button" id="cartButton">
-              <a class="nav-link icon" id="cartLink" href="#">CART</a>
-            </button>
+            <!-- <input class="form-control me-2" style="margin: 5px;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success nav-icon" type="submit"><img src="/images/search.png" alt="Search Icon" class="icon"></button> -->
+            <!-- <button class="btn btn-outline-success nav-icon" type="button" id="cartButton"> -->
+              <a class="nav-link" id="cartLink" href="#">CART</a>
+            <!-- </button> -->
             
-            <button class="btn btn-outline-success nav-icon"  onclick="window.location.href='/login'" type="button">
+            <!-- <button class="btn btn-outline-success nav-icon"  onclick="window.location.href='/login'" type="button"> -->
               <% if (!user) { %>
                 <li class="nav-item">
-                  <a class="nav-link icon" href="/login">LOGIN</a>
+                  <a class="nav-link" href="/login">LOGIN</a>
                 </li>
               <% } else { %>
-
                 <li class="nav-item">
-                  <a class="nav-link icon" href="/logout">LOGOUT</a>
+                  <a class="nav-link" href="/logout">LOGOUT</a>
                 </li>
               <% } %>
-            </button>
+            <!-- </button> -->
           </form>
         </ul>
       </div>
     </div>
   </nav>
+  <div class="text-animation" style="background-color: white; height: 20px; text-align: center; padding-bottom: 35px; padding-top: 15px;">
+    <p>Free shipping all around Pakistan on orders above Rs.5000/-</p>
+</div>
+
   <% if(flash){%>
     <div class="alert alert-<%- flash.type %>">
       <%= flash.message %>
     </div>
   <% } %>
   
-  <div id="page-content">
-    <%- include(pageContent) %>
-  </div>
-
-
+<div id="page-content">
+    <%- include(pageContent, { user: user || null }) %>  
+</div>
+  
   <footer>
     <div class="container">
         <div class="footer-content">
@@ -105,6 +107,7 @@
 document.getElementById('cartLink').addEventListener('click', function(event) {
   event.preventDefault();
   const token = localStorage.getItem('auth-token');
+  console.log(token);
   if (!token) {
     alert('No token found. Please log in first.');
     return;
