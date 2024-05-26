@@ -1,0 +1,55 @@
+.pageContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  
+    background: url('./images/login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8;  
+}
+
+.Eform {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.Etitle {
+    text-align: center;
+    color: #333;
+}
+
+.Einput {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.Elabel {
+    display: block;
+    margin-top: 10px;
+}
+
+.Ebutton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.Ebutton:hover {
+    background-color: #45a049;
+}

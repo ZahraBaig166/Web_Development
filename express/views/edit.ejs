@@ -1,35 +1,15 @@
 <link rel="stylesheet" href="style3.css"> 
-<h2>Edit Product</h2>
-<form id="uploadForm" action="/products/<%= product._id %>/edit" method="post" enctype="multipart/form-data">
-    Name: <input type="text" name="name" value="<%= product.name %>" required><br>
-    Category: <input type="text" name="category" value="<%= product.category %>" required><br>
-    Type: <input type="text" name="type" value="<%= product.type %>" required><br>
-    Price: <input type="number" name="price" value="<%= product.price %>" required><br>
-    Description: <input type="text" name="description" value="<%= product.description %>" required><br>
-    Image: <input type="file" name="image" accept="image/*"><br>
-    <input type="submit" value="Update Product">
+<link rel="stylesheet" href="/edit.css">
+<h2 class="Etitle">Edit Product</h2>
+<form id="uploadForm" class="Eform" action="/products/<%= product._id %>/edit" method="post" enctype="multipart/form-data">
+    <label class="Elabel">Name:</label> <input type="text" class="Einput" name="name" value="<%= product.name %>" required><br>
+    <label class="Elabel">Category:</label> <input type="text" class="Einput" name="category" value="<%= product.category %>" required><br>
+    <label class="Elabel">Type:</label> <input type="text" class="Einput" name="type" value="<%= product.type %>" required><br>
+    <label class="Elabel">Price:</label> <input type="number" class="Einput" name="price" value="<%= product.price %>" required><br>
+    <label class="Elabel">Description:</label> <input type="text" class="Einput" name="description" value="<%= product.description %>" required><br>
+    <label class="Elabel">Image:</label> <input type="file" class="Einput" name="image" accept="image/*"><br>
+    <input type="submit" class="Ebutton" value="Update Product">
 </form>
 
-<!-- <script>
-document.getElementById('uploadForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
 
-    const formData = new FormData(this);
 
-    try {
-        const response = await fetch(`/products/${product._id}/edit`, {
-            method: 'POST',
-            body: formData
-        });
-        if (response.ok) {
-            alert('Product updated successfully!');
-            window.location.href = '/list'; 
-        } else {
-            alert('Error updating product.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error updating product.');
-    }
-});
-</script> -->
