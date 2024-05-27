@@ -413,7 +413,6 @@ body {
     font-weight: bold;
   }
   
-  
 
   
   @media screen and (min-width: 768px){
@@ -429,45 +428,122 @@ body {
           grid-template-columns: repeat(4, 1fr);
       }
   }
-  .new-arrivals {
+
+  @import url('https://fonts.googleapis.com/css?family=Calibri:400,300,700');
+
+.new-arrivals-section {
+  width: 90%;
+    font-family: 'Calibri', sans-serif !important;
+    background-color: #eee;
+    padding: 0;
+}
+
+.new-arrivals {
+  width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    padding: 0px 35px;
-    background-color: #fff; /* White background */
-  }
-  
-  .new-arrivals .box {
-    flex: 0 1 23%;
-    margin: 10px;
-    height: 40vh; 
+    justify-content: center;
+}
+
+.new-arrivals-text-box {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top for images */
-    align-items: center; /* Center content horizontally */
-    background-color: #fff; /* Keep background white */
-  }
-  
-  .new-arrivals .box.text-box {
-    order: 0;
-    flex: 0 1 15%;
     justify-content: center;
-  }
-  
-  .new-arrivals .box img {
-    width: 100%; /* Use full width of the box */
-    height: 40vh; /* Images take up 40% of the viewport height */
-    object-fit: cover; /* Ensures images cover the designated area nicely */
-  }
-  
-  @media (max-width: 768px) {
-    .new-arrivals .box {
-      flex: 0 1 calc(47% - 10px); /* Adjust the width as needed for smaller screens */
-    }
-  
-    .new-arrivals .box.text-box {
-      flex: 0 1 calc(94% - 10px); /* Full width on smaller screens */
-    }
-  }
-  
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.new-arrivals-text-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.new-arrivals-text-box p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.new-arrivals-view-more-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-arrivals-view-more-btn:hover {
+    background-color: #555;
+}
+section {
+  padding-top: 20px;
+}
+
+.new-arrivals-product-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.new-arrivals-product-wrapper {
+  height: 300px;  /* Fixed height for all product wrappers */
+  width: 100%;    /* Full width of the column */
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.new-arrivals-product-img img {
+  height: 100%;   /* Make image take full height of the wrapper */
+  width: auto;    /* Maintain aspect ratio */
+  min-width: 100%; /* Ensure it covers the width */
+  object-fit: cover; /* Cover the container without losing aspect ratio */
+  transition: transform 0.6s ease;
+}
+
+.new-arrivals-product-img:hover img {
+  transform: scale(1.1);
+}
+
+.mb-45 {
+    margin-bottom: 45px;
+}
+
+.new-arrivals-product-action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease, bottom 0.6s ease;
+}
+
+.new-arrivals-product-wrapper:hover .new-arrivals-product-action {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.new-arrivals-product-action-style {
+    background-color: #fff;
+    box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
+    display: inline-block;
+    padding: 16px 2px 12px;
+}
+
+.new-arrivals-product-action-style > a {
+    color: #979797;
+    line-height: 1;
+    padding: 0 21px;
+    position: relative;
+    font-size: 18px;
+}
+
+.new-arrivals-product-action-style > a:hover {
+    color: #333;
+}
+

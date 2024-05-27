@@ -60,7 +60,12 @@
             <% } %>
         </ul>
     </nav>
-    <button class="btn-custom" style="margin-left:25px;" onclick="location.href='/products/new'">New Menu</button>
+    <!-- <button class="btn-custom" style="margin-left:25px;" onclick="location.href='/products/new'">New Menu</button> -->
 </div>
 
+<% if (user && user.role === 'admin') { %>
+    <button class="btn-custom" style="margin-left:25px;" onclick="location.href='/products/new'">New Menu</button>
+<% } else { %>
+
+<% } %>
 
