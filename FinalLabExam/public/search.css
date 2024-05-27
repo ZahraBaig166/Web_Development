@@ -1,0 +1,99 @@
+/* search.css */
+.header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.search-box button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-box {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-content h3 {
+    margin: 10px 0;
+}
+
+.product-content .price {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-content .price span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.product-discount-label {
+    position: absolute;
+    background: #ff0000;
+    color: #fff;
+    padding: 5px;
+    top: 10px;
+    left: 10px;
+    font-size: 0.9em;
+}
+
+
+.search-container .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}

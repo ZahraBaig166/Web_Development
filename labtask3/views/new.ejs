@@ -1,0 +1,60 @@
+
+<link rel="stylesheet" href="/new.css">
+<form id="uploadForm" action="/products/new" method="post" enctype="multipart/form-data" class="Nproduct-form">
+
+    <label for="name" class="Nlabel">Name:</label>
+    <input type="text" id="name" name="name" class="Ninput" required>
+
+    <label for="category" class="Nlabel">Category:</label>
+    <select id="category" name="category" class="Nselect" required>
+        <option value="bedroom">Bedroom</option>
+        <option value="kitchen">Kitchen</option>
+        <option value="living room">Living Room</option>
+        <option value="bathroom">Bathroom</option>
+        <option value="outdoor">Outdoor</option>
+    </select>
+
+    <label for="type" class="Nlabel">Type:</label>
+    <select id="type" name="type" class="Nselect" required>
+        <option value="bed">Bed</option>
+        <option value="sofa">Sofa</option>
+        <option value="lamp">Lamp</option>
+        <option value="mirror">Mirror</option>
+        <option value="table">Table</option>
+    </select>
+
+    <label for="price" class="Nlabel">Price:</label>
+    <input type="number" id="price" name="price" class="Ninput" required>
+
+    <label for="description" class="Nlabel">Description:</label>
+    <input type="text" id="description" name="description" class="Ninput" required>
+
+    <label for="image" class="Nlabel">Image:</label>
+    <input type="file" id="image" name="image" class="Ninput" accept="image/*" required>
+
+    <input type="submit" value="Create Product" class="Nsubmit">
+</form>
+<!-- 
+<script>
+document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch('/products/new', {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok) {
+            alert('Product created successfully!');
+            window.location.href = '/list'; 
+        } else {
+            alert('Error creating product.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error creating product.');
+    }
+});
+</script> -->

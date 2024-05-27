@@ -38,15 +38,6 @@ server.get("/contact",isAuthenticated,isAdmin, (req, res) => {
 });
 
 
-server.get("/cart", istoken, (req, res) => {
-    getCartForUser(req.user._id).then(cart => {
-        res.json(cart);
-    }).catch(err => {
-        console.error(err);
-        res.status(500).send("Error fetching cart");
-    });
-});
-
 server.get("/homepage", (req, res) => {
     res.render("layout", { pageContent: "homepage" });
 });
@@ -59,7 +50,6 @@ server.get("/list", async (req, res) => {
         const totalProducts = products.length;
         const totalPages = Math.ceil(totalProducts / pageSize);
 
-        // Paginate products
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, totalProducts);
         const paginatedProducts = products.slice(startIndex, endIndex);
@@ -76,6 +66,54 @@ server.get("/list", async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send("Error fetching products.");
+    }
+});
+server.get("/search", async (req, res) => {
+    try {
+        const query = req.query.query;
+        let products = [];
+
+        if (!req.session.searchHistory) {
+            req.session.searchHistory = [];
+        }
+
+        if (query && !req.session.searchHistory.includes(query)) {
+            req.session.searchHistory.push(query);
+
+            if (req.session.searchHistory.length > 5) {
+                req.session.searchHistory.shift();
+            }
+        }
+
+        if (query) {
+            const regex = new RegExp(query, 'i'); 
+            products = await Product.find({ name: { $regex: regex } });
+        }
+
+        const pageSize = 6; 
+        const currentPage = parseInt(req.query.page) || 1;
+        const totalProducts = products.length;
+        const totalPages = Math.ceil(totalProducts / pageSize);
+
+        const startIndex = (currentPage - 1) * pageSize;
+        const endIndex = Math.min(startIndex + pageSize, totalProducts);
+        const paginatedProducts = products.slice(startIndex, endIndex);
+
+        res.render("layout", {
+            pageContent: "search",
+            pageTitle: "Search Products",
+            products: paginatedProducts,
+            user: req.user,
+            searchHistory: req.session.searchHistory,
+            searchTerm: query, 
+            total: totalProducts,
+            currentPage: currentPage,
+            pageSize: pageSize,
+            totalPages: totalPages
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error searching for products.");
     }
 });
 

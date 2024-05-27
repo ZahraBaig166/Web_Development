@@ -5,7 +5,7 @@ let userSchema = mongoose.Schema({
   email: String,
   password: String,
   hint: String,
-  role: { type: String, default: "admin" } 
+  role: { type: String, default: "user" } 
 });
 
 let user = mongoose.models.User || mongoose.model("User", userSchema);
