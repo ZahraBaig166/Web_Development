@@ -34,7 +34,6 @@ router.post("/login", async (req, res) => {
         res.flash("danger", "Invalid Password");
         return res.redirect("/login");
     }
-    
     req.session.user = {
         _id: user._id,
         name: user.name,
